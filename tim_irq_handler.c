@@ -30,8 +30,6 @@ int8_t tim_add_handlers(TIM_HandleTypeDef *p_tim, void (*p_irq_fcn) (void), void
         	cnt--;
         	p_tim_irq = bckp_p_tim_irq;
         	return -1;
-        } else if (p_tim_irq != bckp_p_tim_irq) {
-        	for (size_t i = 0; i < (cnt - 1); i++) p_tim_irq[i] = bckp_p_tim_irq[i];
         }
 
         p_tim_irq[cnt - 1].p_tim_instance = p_tim;
