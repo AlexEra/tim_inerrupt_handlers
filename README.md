@@ -20,7 +20,7 @@ void my_tim_1_callback(void) {
 
 void my_tim_1_evt_proc(void *ptr) {
     // Start after interrupt
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
     tim_start(&htim1);
 }
 
