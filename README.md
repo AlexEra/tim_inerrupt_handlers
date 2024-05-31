@@ -12,6 +12,9 @@ Example
 ---------
 ```c
 #include "tim_irq_handler.h"
+/*
+* TIM1 is set for 1 s period for this example
+*/
 
 void my_tim_1_callback(void) {
   // Stop after timer update
