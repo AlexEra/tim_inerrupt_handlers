@@ -14,14 +14,14 @@ Example
 #include "tim_irq_handler.h"
 
 void my_tim_1_callback(void) {
-    // Stop after timer update
-    tim_stop(&htim1);
+  // Stop after timer update
+  tim_stop(&htim1);
 }
 
 void my_tim_1_evt_proc(void *ptr) {
-    // Start after interrupt
-    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    tim_start(&htim1);
+  // Start after interrupt
+  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+  tim_start(&htim1);
 }
 
 int main() {
