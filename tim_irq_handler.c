@@ -3,7 +3,7 @@
 
 
 typedef struct {
-	TIM_HandleTypeDef *p_tim_instance; // pointer to HAL timer structure
+    TIM_HandleTypeDef *p_tim_instance; // pointer to HAL timer structure
     void (*p_fcn_callback) (void); // pointer to user callback function
     void (*p_fcn_handler) (void *); // pointer to user interrupt handler function
     uint8_t irq_flag; // interrupt flag (0 - no interrupt, 1 - interrupt occured)
@@ -58,6 +58,15 @@ void tim_handle_callback(TIM_HandleTypeDef *p_tim, void *args) {
         	p_tim_irq[i].irq_flag = 0;
         	p_tim_irq[i].p_fcn_handler(args);
         }
+    }
+}
+
+uint8_t get_flag(TIM_HandleTypeDef *p_tim) {
+    for (size_t i = 0; i < cnt; i++) {
+        if (p_tim_irq[i].p_tim_instance == p_tim)
+	    return p_tim_irq[i].irq_flag;
+	else
+	    return 0xFF;
     }
 }
 
