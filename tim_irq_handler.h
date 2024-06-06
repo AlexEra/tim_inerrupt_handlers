@@ -9,7 +9,7 @@
  * @param p_tim Pointer to HAL timer structure
  * @param p_irq_fcn Pointer to user callback function
  * @param p_hndlr_fcn Pointer to user interrupt event handler function
- * @return Timer number if timer added, -1 otherwise
+ * @return 1 if timer's stuff added, -1 otherwise
  * */
 int8_t tim_add_handlers(TIM_HandleTypeDef *p_tim, void (*p_irq_fcn) (void), void (*p_hndlr_fcn) (void *));
 
