@@ -9,6 +9,7 @@
  * @param p_tim Pointer to HAL timer structure
  * @param p_irq_fcn Pointer to user callback function
  * @param p_hndlr_fcn Pointer to user interrupt event handler function
+ * @return Timer number if timer added, -1 otherwise
  * */
 int8_t tim_add_handlers(TIM_HandleTypeDef *p_tim, void (*p_irq_fcn) (void), void (*p_hndlr_fcn) (void *));
 
@@ -30,5 +31,12 @@ void tim_start(TIM_HandleTypeDef *p_tim);
  * @param p_tim Pointer to HAL timer structure
  */
 void tim_stop(TIM_HandleTypeDef *p_tim);
+
+/**
+ * @brief Get the interrupt flag
+ * @param p_tim Pointer to HAL timer structure
+ * @return Flag status if timer added, 0xFF otherwise
+ */
+uint8_t get_flag(TIM_HandleTypeDef *p_tim);
 
 #endif /* SRC_TIM_IRQ_HANDLER_H_ */
